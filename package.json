@@ -1,0 +1,28 @@
+{
+  "name": "bookmarklets",
+  "version": "1.0.0",
+  "description": "Online bookmarklet generator",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild build.ts --format=iife --minify --outfile=build/build.js && node build/build.js",
+    "prettier": "prettier -w \"**/*.ts\" \"**/*.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/lodash": "^4.17.7",
+    "@types/node": "^22.5.1",
+    "@types/pako": "^2.0.3",
+    "@types/pug": "^2.0.10",
+    "base64-js": "^1.5.1",
+    "esbuild": "^0.23.1",
+    "esbuild-wasm": "^0.23.1",
+    "lodash": "^4.17.21",
+    "pako": "^2.1.0",
+    "prettier": "^3.3.3",
+    "pug": "^3.0.3",
+    "sass": "^1.77.8",
+    "typescript": "^5.5.4"
+  }
+}

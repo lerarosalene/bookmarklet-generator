@@ -1,0 +1,124 @@
+html, body
+  margin: 0
+  padding: 0
+  font-family: "Inter", sans-serif
+  font-optical-sizing: auto
+
+code
+  background-color: rgba(0, 0, 0, .1)
+  border: 1px solid rgba(0, 0, 0, .2)
+  border-radius: 2px
+  font-family: 'Fira Code', monospace
+  font-size: .7em
+  padding: 4px
+
+.top-header
+  margin-top: .25em
+
+.bookmarklet-wrapper
+  display: flex
+  gap: 8px
+
+.esbuild-header
+  display: flex
+  align-items: center
+  gap: 8px
+  margin-bottom: 0
+
+.hidden > *
+  display: none !important
+
+.hidden-self
+  &#{&}
+    display: none
+
+.main
+  padding: 8px
+  display: grid
+  height: 100vh
+  box-sizing: border-box
+  grid-template-columns: 1fr 1fr
+  gap: 8px
+
+.controls
+  display: flex
+  flex-direction: column
+  gap: 8px
+  height: 100%
+  box-sizing: border-box
+
+.right-pane
+  display: flex
+  flex-direction: column
+  gap: 8px
+
+textarea
+  resize: none
+
+textarea, input
+  font-family: "Fira Code", monospace
+  font-optical-sizing: auto
+
+@mixin button
+  gap: 4px
+  display: flex
+  align-items: center
+  background-color: #E0E0E0
+  color: #333
+  border: 1px solid #B0B0B0
+  border-radius: 2px
+  padding: 5px
+  cursor: pointer
+  transition: background-color 0.3s ease, color 0.3s ease
+
+  &:hover
+    background-color: #B0B0B0
+    color: #fff
+
+  &:active
+    background-color: #909090
+    color: #fff
+    border-color: #909090
+
+.copy-code-button
+  font-size: 14px
+  @include button
+
+.create-is-gd-button
+  font-size: 16px
+  justify-content: center
+  @include button
+
+.button-container
+  display: flex
+  justify-content: end
+
+.icon-small
+  &#{&}
+    font-size: 14px
+
+.icon-normal
+  &#{&}
+    font-size: 16px
+
+.result-error
+  background-color: hsl(0, 75%, 80%)
+  border-color: hsl(0, 75%, 50%)
+  color: black
+
+.link-error
+  color: hsl(0, 75%, 40%)
+
+.share-row
+  display: flex
+  gap: 8px
+  align-items: baseline
+
+.grow
+  flex-grow: 1
+
+.bookmarklet
+  max-width: 15rem
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: pre
