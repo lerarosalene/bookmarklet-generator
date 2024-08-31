@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "esbuild build.ts --format=iife --minify --outfile=build/build.js && node build/build.js",
-    "prettier": "prettier -w \"**/*.ts\" \"**/*.js\""
+    "prettier": "prettier -w \"**/*.ts\" \"**/*.js\"",
+    "typecheck": "tsc"
   },
   "keywords": [],
   "author": "",
