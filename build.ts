@@ -29,6 +29,13 @@ async function main() {
     require.resolve("esbuild-wasm/esbuild.wasm"),
     path.join("dist", "esbuild.wasm"),
   );
+
+  const assetsDir = path.join('src', 'assets');
+  const assets = await fsp.readdir(assetsDir);
+
+  for (const asset of assets) {
+    await fsp.copyFile(path.join(assetsDir, asset), path.join('dist', asset));
+  }
 }
 
 main().catch((error) => {

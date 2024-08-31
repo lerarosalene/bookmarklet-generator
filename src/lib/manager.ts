@@ -107,11 +107,11 @@ export class Manager {
     this.loadFromHash();
 
     fetch(this.esbuildWasmURL)
-      .then(response => response.arrayBuffer())
-      .then(data => WebAssembly.compile(data))
-      .then(module => esbuild.initialize({ wasmModule: module }))
+      .then((response) => response.arrayBuffer())
+      .then((data) => WebAssembly.compile(data))
+      .then((module) => esbuild.initialize({ wasmModule: module }))
       .then(() => this.esbuildReadyCallback?.())
-      .catch(error => this.esbuildErrorCallback?.(error));
+      .catch((error) => this.esbuildErrorCallback?.(error));
 
     this.elements.code.addEventListener(
       "input",
@@ -141,7 +141,13 @@ export class Manager {
       "click",
       this.createIsGdLink,
     );
+    this.elements.bookmarklet.addEventListener("click", this.onBookmarkClick);
   }
+
+  private onBookmarkClick = (e: Event) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
 
   private createIsGdLink = async () => {
     this.elements.isGdCreateButton.disabled = true;

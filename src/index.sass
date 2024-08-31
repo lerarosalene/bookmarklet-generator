@@ -70,11 +70,9 @@ textarea, input
   padding: 5px
   cursor: pointer
   transition: background-color 0.3s ease, color 0.3s ease
-
   &:hover
     background-color: #B0B0B0
     color: #fff
-
   &:active
     background-color: #909090
     color: #fff
@@ -107,7 +105,10 @@ textarea, input
   color: black
 
 .link-error
-  color: hsl(0, 75%, 40%)
+  &#{&}
+    color: hsl(0, 75%, 40%)
+    &:active
+      color: hsl(0, 75%, 40%)
 
 .share-row
   display: flex
@@ -122,3 +123,30 @@ textarea, input
   overflow: hidden
   text-overflow: ellipsis
   white-space: pre
+  color: rgb(0, 0, 238)
+  &:active
+    color: rgb(0, 0, 238)
+
+.footer-row
+  display: flex
+  justify-content: end
+  &:not(:last-child)
+    margin-bottom: -8px
+
+.github-link
+  display: inline-flex
+  align-items: center
+  gap: 4px
+  color: hsl(0, 0%, 38.04%)
+  &:hover, &:active
+    color: hsl(0, 0%, 12.94%)
+    & > img
+      opacity: 1
+  & > img
+    opacity: 0.7
+
+.attribution
+  font-size: 14px
+  color: hsl(0, 0%, 38.04%)
+  &:hover, &:active
+    color: hsl(0, 0%, 12.94%)
