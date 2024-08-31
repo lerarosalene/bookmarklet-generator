@@ -108,7 +108,7 @@ export class Manager {
 
     fetch(this.esbuildWasmURL)
       .then(response => response.arrayBuffer())
-      .then(data => new WebAssembly.Module(data))
+      .then(data => WebAssembly.compile(data))
       .then(module => esbuild.initialize({ wasmModule: module }))
       .then(() => this.esbuildReadyCallback?.())
       .catch(error => this.esbuildErrorCallback?.(error));
