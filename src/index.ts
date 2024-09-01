@@ -25,5 +25,5 @@ const elements: Elements = {
   ) as HTMLButtonElement,
 };
 
-const manager = new Manager(elements, "/esbuild.wasm");
+const manager = new Manager(elements, "https://unpkg.com/esbuild-wasm@0.23.1/esbuild.wasm");
 manager.start();
